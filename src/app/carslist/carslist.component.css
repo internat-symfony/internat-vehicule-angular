@@ -1,0 +1,40 @@
+div {
+    min-height: 440px;
+    height: auto;
+    position:center ;
+    text-align: center;
+
+    top: 0;
+    bottom: 0;
+  }
+  
+  div {
+    height: 65px;
+  }
+  
+  body {
+    background-image: url("ville-kaisla-HNCSCpWrVJA-unsplash.jpg");
+    position:fixed;
+    background-size: cover;
+    position: relative;
+
+  }
+  ::ng-deep .product > img {
+    height: 100%;
+    width: 95px;
+    float: left;
+  }
+  
+   div {
+    padding-left: 10px;
+    vertical-align: top;
+    line-height: 65px;
+    font-size: 15px;
+    float: left;
+  }
+  
+   div.price {
+    float: right;
+    font-size: 18px;
+  }
+  

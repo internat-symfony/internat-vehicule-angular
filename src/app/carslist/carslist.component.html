@@ -1,0 +1,14 @@
+    <div>
+        <table>
+        <ul *ngFor="let car of cars | async"   >
+        <h1><img src={{car.image}} alt="image">
+        </h1>
+        <h1>{{car.id}}</h1>
+        <h1>{{car.name}}</h1>
+        <h1>{{car.price}}</h1>
+        <button>see more</button>
+        <button  (click)="deleteCar(car.id)">delete</button>
+        <button>edit</button>
+        </ul>
+        </table>
+        </div>
