@@ -9,9 +9,9 @@ import { Cars } from '../models/cars';
 export class OnecarService {
 
   constructor(public   http: HttpClient) { }
+  id!:Observable<Cars[]>;
 
-  getCarById(faceSnapId: number): Observable<Cars> {
-    return this.http.get<Cars>(`http://localhost:3000/facesnaps/${faceSnapId}`);
+  getCarById(id: number): Observable<Cars> {
+    return this.http.get<Cars>(`http://127.0.0.1:8080/cars/getcardetail/${id}`);
 }
-
 }

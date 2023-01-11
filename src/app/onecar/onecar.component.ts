@@ -1,6 +1,8 @@
 import { Component , OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cars } from '../models/cars';
+import { ActivatedRoute, Router } from '@angular/router';
+import { OnecarService } from './onecar.service';
 
 @Component({
   selector: 'app-onecar',
@@ -8,13 +10,18 @@ import { Cars } from '../models/cars';
   styleUrls: ['./onecar.component.css']
 })
 export class OnecarComponent {
-  onecar!: Cars;
-  onecar$!: Observable<Cars[]>;
-  
-
+  id!: number;
+onecar!: Cars;  
+  constructor(
+    public onecarservice: OnecarService,
+    private route: ActivatedRoute,
+    private router: Router
+   ) { }
+     
   ngOnInit() {
-    
-    // const onecarId = 
-    // this.onecar$ = this.faceSnapsService.getFaceSnapById(faceSnapId);
+    this.id = this.route.snapshot.params['postId'];  
+    this.onecarservice.getCarById(this.id).subscribe((data: Cars)=>{
+      this.onecar = data;
+})
 }
 }

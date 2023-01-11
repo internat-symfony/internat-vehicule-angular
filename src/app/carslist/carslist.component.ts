@@ -6,6 +6,8 @@ import { AppModule } from '../app.module';
 import {  CarProductService } from './carslist.service';
 import {Cars} from '../models/cars'
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { EditcarService } from '../editcar/editcar.service';
 
 
 
@@ -19,7 +21,10 @@ import { Observable } from 'rxjs';
 export class CarslistComponent {
  cars!: Observable<Cars[]>;
 id!:Observable<Cars[]>;
-  constructor(public carsservice: CarProductService) {
+  constructor(public carsservice: CarProductService,
+   public careditservoce:EditcarService,
+    private router: Router
+    ) {
 
     // this.products = service.getProducts();
   // }
@@ -31,13 +36,19 @@ id!:Observable<Cars[]>;
   // }
 }
 ngOnInit(): void {
+  this.seethemall()
+}
+seethemall(){
   this.cars = this.carsservice.getAllCars();
 }
 deleteCar(id:number){
   console.log(id);
    this.carsservice.deleteOneCar(id).subscribe(res=>{
-    // this.cars;
+    this.seethemall()
      console.log(res);
    });
+}
+gotoedit(id:number){
+  this.router.navigateByUrl(`/editcar${id}`);
 }
 }

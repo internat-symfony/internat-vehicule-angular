@@ -7,19 +7,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { OnecarComponent } from './onecar/onecar.component';
 import { DxListModule } from 'devextreme-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { CreatecarComponent } from './createcar/createcar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditcarComponent } from './editcar/editcar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarslistComponent,
-    OnecarComponent
+    OnecarComponent,
+    CreatecarComponent,
+    EditcarComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    DxListModule
-  ],
+    DxListModule,     
+    FormsModule,
+    ReactiveFormsModule 
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

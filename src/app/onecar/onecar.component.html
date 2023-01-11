@@ -1,1 +1,30 @@
 <p>onecar works!</p>
+<div class="container">
+    <h1>View Car</h1>
+   
+    <a href="#" routerLink="cardetail" class="btn btn-primary">know more</a>
+    
+    <div>
+        <strong>ID:</strong>
+        <p>{{ onecar.id }}</p>
+    </div>
+
+
+
+    <div>
+        <strong>image:</strong>
+        <p><img src={{onecar.image}} alt="image"></p>
+    </div>
+
+
+    <div>
+        <strong> Model:</strong>
+        <p>{{ onecar.name }}</p>
+    </div>
+    
+    <div>
+        <strong>Price:</strong>
+        <p>{{ onecar.price }}</p>
+    </div>
+    
+</div>

@@ -8,7 +8,7 @@
         <h1>{{car.price}}</h1>
         <button>see more</button>
         <button  (click)="deleteCar(car.id)">delete</button>
-        <button>edit</button>
+        <button  [routerLink]="['/editcar',(car.id)]">edit</button>
         </ul>
         </table>
         </div>
