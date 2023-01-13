@@ -66,7 +66,7 @@ export class EditcarComponent {
     console.log(this.form.value);
     this.editcarservice.updateCar(this.id,this.form.value).subscribe((res:any) => {
          console.log('Post updated successfully!');
-         this.router.navigateByUrl('');
+         this.router.navigateByUrl('/carlist');
     })
   }
 }

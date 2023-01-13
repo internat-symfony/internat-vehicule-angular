@@ -22,6 +22,6 @@ export class EditcarService {
   }
 
   updateCar(id:number,car:Cars): Observable<Cars> {
-    return this.http.put<Cars>(`http://127.0.0.1:8080/cars/carupdate/${id}`,car ,this.httpOptions)
+    return this.http.put<Cars>(`http://127.0.0.1:8000/cars/carupdate/${id}`,car ,this.httpOptions)
   }
 }

@@ -12,6 +12,6 @@ export class OnecarService {
   id!:Observable<Cars[]>;
 
   getCarById(id: number): Observable<Cars> {
-    return this.http.get<Cars>(`http://127.0.0.1:8080/cars/getcardetail/${id}`);
+    return this.http.get<Cars>(`http://127.0.0.1:8000/cars/getcardetail/${id}`);
 }
 }

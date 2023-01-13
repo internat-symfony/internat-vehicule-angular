@@ -1,19 +1,18 @@
 <div class="container">
-    <h1>Create New Post</h1>
+    <h1>ajoutez votre véhicule</h1>
    
-    <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
          
     <form [formGroup]="form" (ngSubmit)="submit()">
    
         <div class="form-group">
-            <label for="name">name:</label>
+            <label for="name">nom:</label>
             <input
                 formControlName="name"
                 id="name"
                 type="text"
                 class="form-control">
-            <div *ngIf="f['name']?.invalid" class="alert alert-danger">
-                <div *ngIf="f['name'].errors && f['name'].errors['required']">name is required.</div>
+            <div *ngIf="f['name'].touched && f['name']?.invalid" class="alert alert-danger">
+                <div *ngIf="f['name'].errors && f['name'].errors['required']">un nom est requis</div>
             </div>
         </div>
    
@@ -25,23 +24,23 @@
                 type="text"
                 class="form-control">
             </textarea>
-            <div *ngIf="f['image']?.invalid" class="alert alert-danger">
-                <div *ngIf="f['image'].errors  && f['image'].errors['required']">image is required.</div>
+            <div *ngIf="f['image'].touched && f['image']?.invalid" class="alert alert-danger">
+                <div *ngIf="f['image'].errors  && f['image'].errors['required']">une image est requise</div>
             </div>
         </div>
         <div class="form-group">
-            <label for="price">price</label>
+            <label for="price">prix</label>
             <textarea
                 formControlName="price"
                 id="price"
                 type="text"
                 class="form-control">
             </textarea>
-            <div *ngIf="f['price']?.invalid" class="alert alert-danger">
-                <div *ngIf="f['price'].errors && f['price'].errors['required']">price is required.</div>
+            <div *ngIf="f['price'].touched && f['price']?.invalid" class="alert alert-danger">
+                <div *ngIf="f['price'].errors && f['price'].errors['required']">un prix est requis</div>
             </div>
         </div>
    
-        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+        <button class="validate" id="validate" type="submit" [disabled]="!form.valid">valider</button>
     </form>
 </div>

@@ -1,40 +1,74 @@
-div {
-    min-height: 440px;
-    height: auto;
-    position:center ;
-    text-align: center;
 
-    top: 0;
-    bottom: 0;
-  }
-  
-  div {
-    height: 65px;
-  }
-  
-  body {
-    background-image: url("ville-kaisla-HNCSCpWrVJA-unsplash.jpg");
-    position:fixed;
-    background-size: cover;
-    position: relative;
+h1{
+  text-align: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+}
+.container{
+  border: 1px outset rgb(196, 196, 196);
+  box-shadow: 10px 5px 5px rgb(39, 38, 38);
+  position: static;}
+table{
+  background-repeat:no-repeat;
+  background-size:cover;
+  width: 50%;
+  justify-content: center;
+  box-shadow: 10px 5px 5px rgb(39, 38, 38);}
+.createbutton{
+  background-color: rgb(77, 77, 77);
+  background-size:cover;
+  background-repeat:no-repeat;
+  box-shadow: 10px 5px 5px rgb(39, 38, 38);
+  border-radius:10%;
+ justify-content: center;
+ color: white;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+position: sticky;
+top: 20px;
+}
+tr{
+  border: 1px outset rgb(196, 196, 196);
+  background-repeat:no-repeat;
+  background-size:cover;
+  border-radius:10%;
+}
+#namestospace{
+  margin-left: 10%;
+}
+.btn btn-link btn-sm btn-rounded{
+color: black;
+}
+button {
+  background-color: rgb(196, 196, 196);
+  float: left;
+  border: 1px solid rgb(90, 89, 89);
+}
 
-  }
-  ::ng-deep .product > img {
-    height: 100%;
-    width: 95px;
-    float: left;
-  }
-  
-   div {
-    padding-left: 10px;
-    vertical-align: top;
-    line-height: 65px;
-    font-size: 15px;
-    float: left;
-  }
-  
-   div.price {
-    float: right;
-    font-size: 18px;
-  }
-  
+#moredetails{
+  color: white;
+  background-color: green;
+  margin:5px;
+}
+
+button:hover{
+  background-color: rgb(121, 119, 119);
+}
+
+#delete{
+  color: white;
+background-color: rgb(153, 2, 2);
+margin:5px;
+}
+#edit{
+  color: white;
+  background-color: rgb(70, 0, 70);
+  margin:5px;
+}
+#delete:hover{
+  background-color: rgb(252, 51, 51)
+}
+#edit:hover{
+  background-color: rgb(218, 53, 218)
+}
+#moredetails:hover{
+  background-color: rgb(3, 236, 3)
+}

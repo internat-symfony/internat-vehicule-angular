@@ -25,7 +25,7 @@ export class CarProductService {
   }
 
 
-  getbaseURL: string = "http://127.0.0.1:8080/cars/getcarlist";
+  getbaseURL: string = "http://127.0.0.1:8000/cars/getcarlist";
 // deletebaseURL: string = `http://127.0.0.1:8000/cars/deletecar/${id}`
 
 
@@ -33,11 +33,11 @@ getAllCars(): Observable<Cars[]> {
   return this.http.get<Cars[]>(this.getbaseURL);
 }
  deleteOneCar(id:number): Observable <Cars[]>{
-return   this.http.delete<any>(`http://127.0.0.1:8080/cars/deletecar/${id}`)
+return   this.http.delete<any>(`http://127.0.0.1:8000/cars/deletecar/${id}`)
   }
 
 findOneCar(id:number): Observable<Cars[]> {
-  return this.http.get<Cars[]>(`http://127.0.0.1:8080/cars/getcardetail/${id}`)
+  return this.http.get<Cars[]>(`http://127.0.0.1:8000/cars/getcardetail/${id}`)
 
 
 }

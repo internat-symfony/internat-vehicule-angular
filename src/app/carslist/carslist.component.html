@@ -1,14 +1,46 @@
-    <div>
-        <table>
-        <ul *ngFor="let car of cars | async"   >
-        <h1><img src={{car.image}} alt="image">
-        </h1>
-        <h1>{{car.id}}</h1>
-        <h1>{{car.name}}</h1>
-        <h1>{{car.price}}</h1>
-        <button>see more</button>
-        <button  (click)="deleteCar(car.id)">delete</button>
-        <button  [routerLink]="['/editcar',(car.id)]">edit</button>
-        </ul>
-        </table>
+      <br>
+      <div  class="justify-content-center d-flex">
+          <button  type="button" class="createbutton"  [routerLink] ="['/createcar']" >ajouter une véhicule</button>
+        </div>
+        <br>
+        <div class="justify-content-center d-flex">
+       <table  class="table align-middle mb-0 bg-transparent responsive">
+            <thead class="bg-transparent">
+              
+              <tr  >
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th class="text-align-center">Action</th>
+              </tr> 
+            </thead>
+         
+            <tbody>
+              <tr  *ngFor="let car of cars | async">
+                <td>
+                    <p class="fw-bold mb-1">{{car.id}}</p>
+                  </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img 
+                        src={{car.image}}  
+                        alt=""
+                        style="width: 45px; height: 45px"
+                        class="rounded-circle"
+                        />
+                      <p class="fw-bold mb-1" id="namestospace">{{car.name}}</p>
+                  </div>
+                </td>
+                <td>
+                  <p class="fw-bold mb-1">{{car.price}}</p>
+                </td>
+            
+                <td>
+                      <button type="button" id="moredetails" class="btn" [routerLink]="['/cardetail',(car.id)]">plus des details</button>
+                      <button type="button" id="delete" class="btn" (click)="deleteCar(car.id)">supprimer</button>
+                      <button type="button" id="edit" class="btn" [routerLink]="['/editcar',(car.id)]">modifier</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>

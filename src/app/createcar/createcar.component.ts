@@ -39,7 +39,7 @@ export class CreatecarComponent {
     // this.cartocreate=this.form.value;
     this.createcarservice.createCar(this.form.value).subscribe((res:any) => {
          console.log('Post created successfully!');
-         this.router.navigateByUrl('');
+         this.router.navigateByUrl('/carlist');
     })
   }  
 }

@@ -19,9 +19,9 @@ onecar!: Cars;
    ) { }
      
   ngOnInit() {
-    this.id = this.route.snapshot.params['postId'];  
+    this.id = this.route.snapshot.params['id'];
     this.onecarservice.getCarById(this.id).subscribe((data: Cars)=>{
-      this.onecar = data;
+    this.onecar = data;
 })
 }
 }

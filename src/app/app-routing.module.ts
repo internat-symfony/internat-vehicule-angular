@@ -5,15 +5,17 @@ import { CarslistComponent } from './carslist/carslist.component';
 import { OnecarComponent } from './onecar/onecar.component';
 import { CreatecarComponent } from './createcar/createcar.component';
 import { EditcarComponent } from './editcar/editcar.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 
 
 const routes: Routes = [
-  { path: '', component: CarslistComponent },
-  {path:'cardetail', component: OnecarComponent},
+  { path: 'carlist', component: CarslistComponent },
+  {path:'cardetail/:id', component: OnecarComponent},
   {path:'createcar', component: CreatecarComponent},
-  {path:'editcar/:id', component: EditcarComponent}
+  {path:'editcar/:id', component: EditcarComponent},
+{path:'',component: WelcomeComponent}
 ];
 
 @NgModule({

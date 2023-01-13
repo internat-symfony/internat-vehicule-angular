@@ -8,6 +8,7 @@ import {Cars} from '../models/cars'
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { EditcarService } from '../editcar/editcar.service';
+import {MatTableModule} from '@angular/material/table'
 
 
 
@@ -24,16 +25,8 @@ id!:Observable<Cars[]>;
   constructor(public carsservice: CarProductService,
    public careditservoce:EditcarService,
     private router: Router
-    ) {
-
-    // this.products = service.getProducts();
-  // }
-  // products: Cars[] = [];ngOnInit(): void {
-  //   this.carsservice.getProducts().subscribe(response => {
-  //       this.products = response.image;
-  
-  //     });
-  // }
+    )
+     {
 }
 ngOnInit(): void {
   this.seethemall()
