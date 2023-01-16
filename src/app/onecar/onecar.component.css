@@ -11,10 +11,13 @@ div{
         border-radius:10%;
         box-shadow: 10px 5px 5px rgb(39, 38, 38);
         box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+        top: 10%;
 
 }
 .carimage{
-    border-radius:10%
+    border-radius:10%;
+    max-width: 100%;
+max-height: 100%;
 }
 body{
     background-image: url("https://img.freepik.com/premium-photo/cement-floor-wall-backgrounds-room-interior-display-products_34552-317.jpg?w=1380");
