@@ -72,3 +72,8 @@ margin:5px;
 #moredetails:hover{
   background-color: rgb(3, 236, 3)
 }
+.modal-dialog {
+justify-content: center;
+position: static;
+top: 50px;
+}

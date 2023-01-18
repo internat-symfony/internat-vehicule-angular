@@ -4,6 +4,7 @@ import { Cars } from '../models/cars';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { CreatecarService } from './createcar.service';
+import { NgxBootstrapConfirmService } from 'ngx-bootstrap-confirm';
 @Component({
   selector: 'app-createcar',
   templateUrl: './createcar.component.html',
@@ -17,7 +18,8 @@ export class CreatecarComponent {
 
   constructor(
     public createcarservice: CreatecarService,
-    private router: Router
+    private router: Router,
+    private ngxBootstrapConfirmService: NgxBootstrapConfirmService
   ) { }
      
 
@@ -29,6 +31,7 @@ export class CreatecarComponent {
     });
   }
      
+  
 
   get f(){
     return this.form.controls;
@@ -38,10 +41,11 @@ export class CreatecarComponent {
     console.log(this.form.value);
     // this.cartocreate=this.form.value;
     this.createcarservice.createCar(this.form.value).subscribe((res:any) => {
-         console.log('Post created successfully!');
+      console.log('Post created successfully!');
          this.router.navigateByUrl('/carlist');
     })
   }  
+  
 }
 
 

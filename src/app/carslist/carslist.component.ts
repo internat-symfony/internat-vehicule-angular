@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { EditcarService } from '../editcar/editcar.service';
 import {MatTableModule} from '@angular/material/table'
+import { NgxBootstrapConfirmService } from 'ngx-bootstrap-confirm';
 
 
 
@@ -21,10 +22,12 @@ import {MatTableModule} from '@angular/material/table'
 })
 export class CarslistComponent {
  cars!: Observable<Cars[]>;
-id!:Observable<Cars[]>;
+id!:number
   constructor(public carsservice: CarProductService,
    public careditservoce:EditcarService,
-    private router: Router
+    private router: Router,
+    private ngxBootstrapConfirmService: NgxBootstrapConfirmService,
+
     )
      {
 }
@@ -34,6 +37,9 @@ ngOnInit(): void {
 seethemall(){
   this.cars = this.carsservice.getAllCars();
 }
+  
+   
+ 
 deleteCar(id:number){
   console.log(id);
    this.carsservice.deleteOneCar(id).subscribe(res=>{
@@ -44,4 +50,23 @@ deleteCar(id:number){
 gotoedit(id:number){
   this.router.navigateByUrl(`/editcar${id}`);
 }
+action(id:number) {
+  let options ={
+    title: 'vous etes sur de supprimer la voiture?',
+    confirmLabel: 'Okay',
+    declineLabel: 'Cancel'
+  }
+  this.ngxBootstrapConfirmService.confirm(options).then((res: boolean) => {
+    if (res) {
+      this.deleteCar(id)
+      console.log('Oui');
+    } else {
+      console.log('Annuler');
+    }
+  });
+}
+popoverTitle = 'suppression?';
+popoverMessage = 'vous etes sur de suprimer la véhicule suivante?';
+cancelClicked = true;
+confirmClicked = this.deleteCar(this.id);
 }

@@ -26,3 +26,9 @@ div{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
   position: static;
   }
+  .modal-dialog {
+   justify-content: center;
+   padding: 70px 0;
+  text-align: center;
+    }
+  

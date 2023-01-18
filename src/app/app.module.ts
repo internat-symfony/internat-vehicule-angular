@@ -15,20 +15,29 @@ import {MatTableModule} from '@angular/material/table'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeComponent } from './welcome/welcome.component';
-
+import { ConfirmBoxConfigModule, NgxAwesomePopupModule } from '@costlydeveloper/ngx-awesome-popup';
+import { NgxBootstrapConfirmModule } from 'ngx-bootstrap-confirm';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+import { CommonModule } from '@angular/common';
+import {MatDialogModule } from '@angular/material/dialog';
+import { PopUpComponent } from './pop-up/pop-up.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarslistComponent,
     OnecarComponent,
     CreatecarComponent,
     EditcarComponent,
-    WelcomeComponent
-  ],
+    WelcomeComponent,
+    PopUpComponent,
+    ConfirmDialogComponent
+    ],
   imports: [
+    MatDialogModule,
     BrowserModule,
+    CommonModule,
     HttpClientModule,
     AppRoutingModule,
     MatTableModule,
@@ -36,8 +45,16 @@ import { WelcomeComponent } from './welcome/welcome.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule ,
-    NgbModule
+    NgbModule,
+    NgxAwesomePopupModule.forRoot(), 
+    ConfirmBoxConfigModule.forRoot(),
+    NgxBootstrapConfirmModule,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'danger', // set defaults here
+    }),
     ],
+    exports: [  
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

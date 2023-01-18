@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Cars } from '../models/cars';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OnecarService } from './onecar.service';
+import { ConfirmBoxInitializer, DialogLayoutDisplay } from '@costlydeveloper/ngx-awesome-popup';
 
 @Component({
   selector: 'app-onecar',
@@ -24,4 +25,6 @@ onecar!: Cars;
     this.onecar = data;
 })
 }
+
+
 }

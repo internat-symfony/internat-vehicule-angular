@@ -3,7 +3,7 @@
     <h1>Mise a jour du vehicule</h1>
     
            
-    <form [formGroup]="form" (ngSubmit)="submit()">
+    <form [formGroup]="form" (ngSubmit)="action()">
      
         <div class="form-group">
             <label for="name">nom:</label>
@@ -44,7 +44,13 @@
             </div>
         </div>
             
-          
+          <br>
         <button class="edit" type="submit" >Modifier</button>
+        <br>
     </form>
+    <br>
 </div>
+
+<button class="btn btn-primary" (click)="openDialog()">
+    Click to open pop up
+  </button>
