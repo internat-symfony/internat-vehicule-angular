@@ -29,6 +29,7 @@
     "devextreme-angular": "^22.2.3",
     "ngx-bootstrap": "^10.2.0",
     "ngx-bootstrap-confirm": "^4.0.3",
+    "ngx-confirm-box": "^0.0.3",
     "rxjs": "^7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

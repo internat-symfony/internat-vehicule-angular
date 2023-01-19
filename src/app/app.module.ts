@@ -21,7 +21,9 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { CommonModule } from '@angular/common';
 import {MatDialogModule } from '@angular/material/dialog';
 import { PopUpComponent } from './pop-up/pop-up.component';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component'
+import { RouterModule } from '@angular/router';
+import { NgxConfirmBoxModule, NgxConfirmBoxService } from 'ngx-confirm-box';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
@@ -32,14 +34,17 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     EditcarComponent,
     WelcomeComponent,
     PopUpComponent,
-    ConfirmDialogComponent
+    CarslistComponent,
+    ConfirmationDialogComponent,
     ],
   imports: [
+    NgxConfirmBoxModule,
+    AppRoutingModule,
     MatDialogModule,
     BrowserModule,
     CommonModule,
+    RouterModule,
     HttpClientModule,
-    AppRoutingModule,
     MatTableModule,
     DxListModule,     
     FormsModule,
@@ -52,10 +57,11 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'danger', // set defaults here
     }),
-    ],
-    exports: [  
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+    exports: [],
+  providers: [NgxConfirmBoxService,CarslistComponent],
+  bootstrap: [AppComponent],
+  entryComponents: [ConfirmationDialogComponent]
+
 })
 export class AppModule { }

@@ -40,12 +40,8 @@
                       <button
                       id="delete"
       class="btn btn-outline-secondary"
-      mwlConfirmationPopover
-      [popoverTitle]="popoverTitle"
-      [popoverMessage]="popoverMessage"
-      placement="left"
-      (cancel)="cancelClicked = true"
-      (confirm)="deleteCar(car.id)"
+    
+      (click)="openDialog(car.id)"
     >
     supprimer
     </button>

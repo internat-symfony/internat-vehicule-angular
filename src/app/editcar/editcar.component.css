@@ -26,9 +26,18 @@ div{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
   position: static;
   }
-  .modal-dialog {
-   justify-content: center;
-   padding: 70px 0;
-  text-align: center;
-    }
-  
+ 
+
+  .confirm modal-body{
+    padding-top: 25% !important;
+
+    width: auto;
+    margin: var(--bs-modal-margin);
+    pointer-events: none;
+    padding-top: 25%;
+
+  }
+  lib-ngx-bootstrap-confirm{
+    padding-top: 25% !important;
+  }
+

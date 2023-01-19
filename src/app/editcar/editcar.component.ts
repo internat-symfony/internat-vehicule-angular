@@ -33,7 +33,7 @@ export class EditcarComponent {
     private ngxBootstrapConfirmService: NgxBootstrapConfirmService,
     private dialogRef: MatDialog
   ) { }
-     
+
   /**
    * Write code on Method
    *
@@ -45,7 +45,7 @@ export class EditcarComponent {
       this.form.patchValue(data)
       // this.car = data;
     }); 
-   
+
     this.form = new FormGroup({
       // id: new FormControl('', Validators.required),
       image: new FormControl('', Validators.required),
@@ -56,6 +56,7 @@ export class EditcarComponent {
          
     openDialog(){
       this.dialogRef.open(PopUpComponent);
+      this.submit()
     }
   /**
    * Write code on Method
@@ -77,24 +78,23 @@ export class EditcarComponent {
     this.editcarservice.updateCar(this.id,this.form.value).subscribe((res:any) => {
       // alert("véhicule modifié avec succes!")
          console.log('Post updated successfully!');
-         this.router.navigateByUrl('/carlist');
     })
   }
-  action() {
-    let options ={
-      title: 'ce sont vos dernieres modifications?',
-      confirmLabel: 'Okay',
-      declineLabel: 'Cancel'
-    }
-    this.ngxBootstrapConfirmService.confirm(options).then((res: boolean) => {
-      if (res) {
-        this.submit()
-        console.log('Okay');
-      } else {
-        console.log('Cancel');
-      }
-    });
-  }
+  // action() {
+  //   let options ={
+  //     title: 'ce sont vos dernieres modifications?',
+  //     confirmLabel: 'oui',
+  //     declineLabel: 'Annuler'
+  //   }
+  //   this.ngxBootstrapConfirmService.confirm(options).then((res: boolean) => {
+  //     if (res) {
+  //       this.submit()
+  //       console.log('oui');
+  //     } else {
+  //       console.log('annuler');
+  //     }
+  //   });
+  // }
 }
 
 
