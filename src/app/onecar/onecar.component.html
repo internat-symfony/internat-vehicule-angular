@@ -1,21 +1,27 @@
-
 <div class="container bg-transparent">
-    <h1>Voir les details</h1>
-    <div>
-        <strong>ID:</strong>
-        <p>{{ onecar.id }}</p>
-    </div>
-    <div>
-        <strong>image:</strong>
-        <p><img  class="carimage "   width="400" 
-            height="500" src={{onecar.image}} alt="image"></p>
-    </div>
-    <div>
-        <strong> Nom:</strong>
-        <p>{{ onecar.name }}</p>
-    </div>
-    <div>
-        <strong>Prix:</strong>
-        <p>{{ onecar.price }}</p>
-    </div>
+  <h1>Voir les details</h1>
+  <div>
+    <strong>ID:</strong>
+    <p>{{ onecar.id }}</p>
+  </div>
+  <div>
+    <strong>image:</strong>
+    <p>
+      <img
+        class="carimage"
+        width="400"
+        height="500"
+        src="{{ onecar.image }}"
+        alt="image"
+      />
+    </p>
+  </div>
+  <div>
+    <strong>Nom:</strong>
+    <p>{{ onecar.name }}</p>
+  </div>
+  <div>
+    <strong>Prix:</strong>
+    <p>{{ onecar.price }}</p>
+  </div>
 </div>

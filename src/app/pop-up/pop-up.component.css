@@ -1,17 +1,15 @@
-.container{
-    border: 3px;
-    border-color: black;
-    width: 300px;
-    height: 110px;
-      position: relative;
-
-    
+.container {
+  border: 3px;
+  border-color: black;
+  width: 300px;
+  height: 110px;
+  position: relative;
 }
-.thebutton{
-    margin: 0;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+.thebutton {
+  margin: 0;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }

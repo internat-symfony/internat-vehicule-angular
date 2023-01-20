@@ -1,24 +1,26 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
-import { Cars } from '../models/cars';
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Injectable } from '@angular/core'
+import { Observable } from 'rxjs/internal/Observable'
+import { Cars } from '../models/cars'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CreatecarService {
-  onecar!: Cars;  
+  onecar!: Cars
 
-  constructor(private http: HttpClient)
-  {  
-  }
+  constructor(private http: HttpClient) {}
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
+      'Content-Type': 'application/json',
+    }),
   }
-  
-  createCar(cartocreate:Cars): Observable<Cars> {
-    return this.http.post<Cars>("http://127.0.0.1:8000/cars/createcar",cartocreate,this.httpOptions)
-  } 
+
+  createCar(cartocreate: Cars): Observable<Cars> {
+    return this.http.post<Cars>(
+      'http://127.0.0.1:8000/cars/createcar',
+      cartocreate,
+      this.httpOptions,
+    )
+  }
 }

@@ -1,48 +1,69 @@
 <div class="container">
-    <h1>ajoutez votre véhicule</h1>
-   
-         
-    <form [formGroup]="form" (ngSubmit)="submit()">
-   
-        <div class="form-group">
-            <label for="name">nom:</label>
-            <input
-                formControlName="name"
-                id="name"
-                type="text"
-                class="form-control">
-            <div *ngIf="f['name'].touched && f['name']?.invalid" class="alert alert-danger">
-                <div *ngIf="f['name'].errors && f['name'].errors['required']">un nom est requis</div>
-            </div>
+  <h1>ajoutez votre véhicule</h1>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="name">nom:</label>
+      <input
+        formControlName="name"
+        id="name"
+        type="text"
+        class="form-control"
+      />
+      <div
+        *ngIf="f['name'].touched && f['name']?.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f['name'].errors && f['name'].errors['required']">
+          un nom est requis
         </div>
-   
-        <div class="form-group">
-            <label for="image">image</label>
-            <textarea
-                formControlName="image"
-                id="image"
-                type="text"
-                class="form-control">
-            </textarea>
-            <div *ngIf="f['image'].touched && f['image']?.invalid" class="alert alert-danger">
-                <div *ngIf="f['image'].errors  && f['image'].errors['required']">une image est requise</div>
-            </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="image">image</label>
+      <textarea
+        formControlName="image"
+        id="image"
+        type="text"
+        class="form-control"
+      ></textarea>
+      <div
+        *ngIf="f['image'].touched && f['image']?.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f['image'].errors && f['image'].errors['required']">
+          une image est requise
         </div>
-        <div class="form-group">
-            <label for="price">prix</label>
-            <textarea
-                formControlName="price"
-                id="price"
-                type="text"
-                class="form-control">
-            </textarea>
-            <div *ngIf="f['price'].touched && f['price']?.invalid" class="alert alert-danger">
-                <div *ngIf="f['price'].errors && f['price'].errors['required']">un prix est requis</div>
-            </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="price">prix</label>
+      <textarea
+        formControlName="price"
+        id="price"
+        type="text"
+        class="form-control"
+      ></textarea>
+      <div
+        *ngIf="f['price'].touched && f['price']?.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f['price'].errors && f['price'].errors['required']">
+          un prix est requis
         </div>
-   <br>
-        <button class="validate" id="validate" type="submit" [disabled]="!form.valid">valider</button>
-        <br>
-    </form>
-    <br>
+      </div>
+    </div>
+    <br />
+    <button
+      class="validate"
+      id="validate"
+      type="submit"
+      [disabled]="!form.valid"
+    >
+      valider
+    </button>
+    <br />
+  </form>
+  <br />
 </div>
